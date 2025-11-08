@@ -1,0 +1,75 @@
+*{
+    font-family: "Monaspace Neon", ui-monospace, SFMono-Regular,
+    SF Mono, Menlo, Consolas, Liberation Mono, monospace  ;
+}
+
+p{
+    margin: 0px;
+}
+
+body{
+    margin: 0px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to top, #02735E, #013440, #011826);
+    height: 100vh;
+}
+form{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+input{
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px 0px 0px 20px;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(20px);
+    padding: 10px;
+    font-size: 16px;
+}
+button{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0px 20px 20px 0px;
+    background-color: rgba(255, 255, 255, 0.15);;
+    font-size: 16px;
+}
+
+.card{
+    width: 200px;
+    height: 300px;
+    display: inline-block;
+    padding: 20px; 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 
+    0 80px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 1px 1px rgba(255, 255, 255, 0.215);
+}
+
+.bigwrapper{
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    display: inline-block;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 
+    0 80px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 1px 1px rgba(255, 255, 255, 0.215);
+}
+
+.thermometer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-size:24px;
+    margin-right: 14px;
+}
