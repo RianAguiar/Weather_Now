@@ -1,38 +1,45 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Clima Agora</title>
-    <link rel="stylesheet" href="{% static 'style/home.css' %}">
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'style/home.css' %}" />
+  </head>
+  <body>
     <div class="bigwrapper">
-        <form method="get">
-            <input type="text" name="cidade" placeholder="Digite uma cidade" required >
-            <button type="submit"><img style="width:32.7px" src="{% static "img/search.png" %}"></button>
-        </form>
+      <form method="get">
+        <input type="text" name="cidade" placeholder="Digite uma cidade" required />
+        <button type="submit"><img style="width:32.7px" src="{% static 'img/search.png' %}" /></button>
+      </form>
 
-        {% if clima %}
-            {% if clima.erro %}
-                <p>{{ clima.erro }}</p>
-            {% else %}
-                <div class="card">
-                    <h2 style="font-size:40px; color:white">{{ clima.cidade }}</h2>
+      {% if clima %}
+        {% if clima.erro %}
+          <p>{{ clima.erro }}</p>
+        {% else %}
+          <div class="card">
+            <h2 style="font-size:20px; color:white">{{ clima.cidade }}</h2>
 
-                    {% if 'nublado' in clima.descricao|lower %}
-                        <img style="width:70px" src="{% static 'img/cloudy.png' %}">
-                    {% endif %}
-
-                    {% if 'céu limpo' in clima.descricao|lower %}
-                        <img style="width:70px" src="{% static 'img/sun.png' %}">
-                    {% endif %}
-
-                    <p class="thermometer"><img style="width:60px" src="{% static "img/thermometer.png" %}">{{ clima.temperatura }}°C</p>
-                    <p style="color:white;font-size:18px">{{ clima.descricao|title }}</p>
-                </div>
+            {% if 'nublado' in clima.descricao|lower %}
+              <img style="width:70px" src="{% static 'img/cloudy.png' %}" />
             {% endif %}
+
+            {% if 'céu limpo' in clima.descricao|lower %}
+              <img style="width:70px" src="{% static 'img/sun.png' %}" />
+            {% endif %}
+
+            <p style="font-size:40px; color:white">{{ clima.temperatura }}°C</p>
+            
+
+            <img style="width:100%" src="{% static 'img/van.png' %}">
+
+            <div style="display:flex;justify-content: space-around;color: white;">
+              <P>9/11/25</P>
+              <P>18:28</P>
+            </div>
+          </div>
         {% endif %}
+      {% endif %}
     </div>
-</body>
+  </body>
 </html>

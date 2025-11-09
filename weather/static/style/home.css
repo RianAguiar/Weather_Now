@@ -7,13 +7,21 @@ p{
     margin: 0px;
 }
 
+h2{
+    margin: 0px;
+}
+
 body{
     margin: 0px;
     display:flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(to top, #02735E, #013440, #011826);
+    background-image: url(../../static/img/forest.avif);
+    background-size: cover;       /* cobre toda a tela */
+    background-position: center;  /* centraliza */
+    background-repeat: no-repeat; /* não repete */
+    background-attachment: fixed; /* efeito parallax leve */
     height: 100vh;
 }
 form{
@@ -29,25 +37,40 @@ input{
     backdrop-filter: blur(20px);
     padding: 10px;
     font-size: 16px;
+        box-shadow: 
+    0 80px 32px rgba(0, 0, 0, 0.1),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -4px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 1px 1px rgba(255, 255, 255, 0.215);
 }
 button{
+    transition: 0.5s;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 0px 20px 20px 0px;
-    background-color: rgba(255, 255, 255, 0.15);;
+    background-color: rgba(255, 255, 255, 0.15);
     font-size: 16px;
+        box-shadow: 
+    0 80px 32px rgba(0, 0, 0, 0.1),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -4px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 1px 1px rgba(255, 255, 255, 0.215);
+}
+
+button:hover{
+    background-color: rgba(255, 255, 255, 0.404);
 }
 
 .card{
     width: 200px;
-    height: 300px;
+    height: 350px;
     display: inline-block;
     padding: 20px; 
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     box-shadow: 
     0 80px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -4px 0 rgba(255, 255, 255, 0.1),
     inset 0 0 1px 1px rgba(255, 255, 255, 0.215);
 }
 
@@ -60,8 +83,8 @@ button{
     border-radius: 20px;
     box-shadow: 
     0 80px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -4px 0 rgba(255, 255, 255, 0.1),
     inset 0 0 1px 1px rgba(255, 255, 255, 0.215);
 }
 
@@ -72,4 +95,10 @@ button{
     color:white;
     font-size:24px;
     margin-right: 14px;
+}
+
+.a{
+    display:flex;
+    justify-content: space-around;
+    color: white;
 }
