@@ -10,7 +10,7 @@
     <div class="bigwrapper">
       <form method="get">
         <input type="text" name="cidade" placeholder="Digite uma cidade" required />
-        <button type="submit"><img style="width:32.7px" src="{% static 'img/search.png' %}" /></button>
+        <button type="submit"><img style="width:32.4px" src="{% static 'img/search.png' %}" /></button>
       </form>
 
       {% if clima %}
@@ -18,20 +18,17 @@
           <p>{{ clima.erro }}</p>
         {% else %}
           <div class="card">
-            <h2 style="font-size:20px; color:white">{{ clima.cidade }}</h2>
+            <h2 style="font-size:60px; color:white">{{ clima.cidade }}</h2>
 
             {% if 'nublado' in clima.descricao|lower %}
-              <img style="width:70px" src="{% static 'img/cloudy.png' %}" />
+              <img style="width:200px" src="{% static 'img/cloudy.png' %}" />
             {% endif %}
 
             {% if 'céu limpo' in clima.descricao|lower %}
-              <img style="width:70px" src="{% static 'img/sun.png' %}" />
+              <img style="width:200px" src="{% static 'img/sun.jpg' %}" />
             {% endif %}
 
-            <p style="font-size:40px; color:white">{{ clima.temperatura }}°C</p>
-            
-
-            <img style="width:100%" src="{% static 'img/van.png' %}">
+            <p style="font-size:60px; color:white">{{ clima.temperatura }}°C</p>
 
             <div style="display:flex;justify-content: space-around;color: white;">
               <P>9/11/25</P>
