@@ -1,1 +1,56 @@
-  Weather Now
+# 🌦️ Weather_Now  
+
+A simple web application for checking the weather, working in Portuguese, built with **Django**, allowing users to search for a city and view current weather.
+
+---
+
+## 🐸 Features  
+- 🐸 City search through an input field.  
+- 🐸 Display of weather data: description, temperature, etc.  
+- 🐸 Dynamic icons based on weather conditions (cloudy, clear sky, fog, rain, thunderstorms, etc).  
+- 🐸 Responsive layout with clean design, gradients, and themed backgrounds.  
+- 🇧🇷 Portuguese (pt-BR) language and Brazilian timezone support.  
+
+---
+
+## 🛠️ Technologies Used  
+- **Django (Python)** — backend and template rendering.  
+- **Custom HTML + CSS + Javascript** (gradients, smooth animations, responsive design).  
+- **OpenWeather API** — for real-time weather data.  
+
+---
+
+## ✅ Requirements  
+- Python 3.x  
+- Django installed (`pip install django`)  
+
+---
+
+## 🚀 Installation & Usage  
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/RianAguiar/Weather_Now.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd Weather_Now
+
+
+3. Create and activate a virtual environment:
+    ```bash
+    python -m venv venv  
+    source venv/bin/activate  # mac/linux  
+    venv\Scripts\activate     # windows  
+
+4. Run database migrations (if needed):
+    ```bash
+    python manage.py migrate
+
+5. Start the development server:
+    ```bash
+    python manage.py runserver
+
+6. Open in your browser:
+    ```bash
+    👉 http://127.0.0.1:8000/ 
