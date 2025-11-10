@@ -19,32 +19,32 @@
 
     {% if clima %}
     {% if clima.erro %}
-    <p>{{ clima.erro }}</p>
+    <p class="cne" style="color:white; font-weight:500;">{{ clima.erro }}<img style="width:30px;" src="{% static 'img/sun.png' %}" /></p>
     {% else %}
     <div class="card" id="card">
-      <h2 style="font-size:55px; color:white">{{ clima.cidade }}</h2>
+      <h2 style="font-size:50px; color:white">{{ clima.cidade }}</h2>
 
       {% if 'nublado' in clima.descricao|lower %}
         <img style="width:100%" src="{% static 'img/cloudy.png' %}" />
       {% elif 'névoa' in clima.descricao|lower %}
-        <img style="width:90%" src="{% static 'img/fog.png' %}" />
+        <img style="width:100%" src="{% static 'img/fog.png' %}" />
       {% elif 'nuvens dispersas' in clima.descricao|lower %}
         <img style="width:100%" src="{% static 'img/cloudy.png' %}" />
       {% elif 'algumas nuvens' in clima.descricao|lower %}
         <img style="width:100%" src="{% static 'img/cloudy.png' %}" />
       {% elif 'pouca neve' in clima.descricao|lower %}
-        <img style="width:70%" src="{% static 'img/snowy.png' %}" />
+        <img style="width:100%" src="{% static 'img/snowy.png' %}" />
       {% elif 'céu limpo' in clima.descricao|lower %}
-        <img style="width:80%" src="{% static 'img/sun.png' %}" />
+        <img style="width:100%" src="{% static 'img/sun.png' %}" />
       {% elif 'chuva leve' in clima.descricao %}
-        <img style="width:70%" src="{% static 'img/raining.png' %}" />
+        <img style="width:100%" src="{% static 'img/raining.png' %}" />
       {% elif 'chuva moderada' in clima.descricao %}
-      <img style="width:70%" src="{% static 'img/raining.png' %}" />
+      <img style="width:100%" src="{% static 'img/raining.png' %}" />
       {% elif 'trovoadas' in clima.descricao %}
-        <img style="width:70%" src="{% static 'img/lightingcloud.png' %}" />
+        <img style="width:100%" src="{% static 'img/lightingcloud.png' %}" />
       {% endif %}
 
-      <p style="color:white;font-size:20px;">{{ clima.descricao}}</p>
+      <p style="color:white;font-size:20px;">{{ clima.descricao }}</p>
       <p style="font-size:60px; color:white">{{ clima.temperatura|floatformat:0 }}°C</p>
 
       <div style="display:flex;justify-content: space-around;color: white;">

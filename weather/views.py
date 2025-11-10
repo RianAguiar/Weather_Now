@@ -21,6 +21,6 @@ def home(request):
                 'hora': datahora.strftime('%H:%M'),
             }
         else:
-            clima = {'erro': 'Cidade não encontrada 😢'}
+            clima = {'erro': 'Cidade não encontrada'}
     
     return render(request, 'home.html', {'clima': clima})
