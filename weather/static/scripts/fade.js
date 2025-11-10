@@ -1,0 +1,1 @@
+window.onload = function () {document.querySelectorAll('.card, .bigwrapper').forEach(el => el.classList.add('fade-in'));};

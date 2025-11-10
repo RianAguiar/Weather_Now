@@ -6,9 +6,7 @@
   <meta charset="UTF-8" />
   <title>Clima Agora</title>
   <link rel="stylesheet" href="{% static 'style/home.css' %}" />
-  <script>
-    window.onload = function () {document.querySelectorAll('.card, .bigwrapper').forEach(el => el.classList.add('fade-in'));};
-  </script>
+  <script src="{% static 'scripts/fade.js' %}"></script>
 </head>
 
 <body>
@@ -25,14 +23,18 @@
     <div class="card" id="card">
       <h2 style="font-size:60px; color:white">{{ clima.cidade }}</h2>
 
-      {% if 'nublado' in clima.descricao|lower %}
+      {% if 'nublado' or 'nuvens dispersas' in clima.descricao|lower %}
         <img style="width:100%" src="{% static 'img/cloudy.png' %}" />
       {% endif %}
 
       {% if 'céu limpo' in clima.descricao|lower %}
         <img style="width:80%" src="{% static 'img/sun.png' %}" />
       {% endif %}
-      
+
+      {% if 'chuva leve' in clima.descricao %}
+        <img style="width:70%" src="{% static 'img/raining.png' %}" />
+      {% endif %}
+
       <p style="color:white;font-size:20px;">{{ clima.descricao}}</p>
       <p style="font-size:60px; color:white">{{ clima.temperatura }}°C</p>
 
