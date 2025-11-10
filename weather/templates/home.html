@@ -1,42 +1,48 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Clima Agora</title>
-    <link rel="stylesheet" href="{% static 'style/home.css' %}" />
-  </head>
-  <body>
-    <div class="bigwrapper">
-      <form method="get">
-        <input type="text" name="cidade" placeholder="Digite uma cidade" required />
-        <button type="submit"><img style="width:32.4px" src="{% static 'img/search.png' %}" /></button>
-      </form>
 
-      {% if clima %}
-        {% if clima.erro %}
-          <p>{{ clima.erro }}</p>
-        {% else %}
-          <div class="card">
-            <h2 style="font-size:60px; color:white">{{ clima.cidade }}</h2>
+<head>
+  <meta charset="UTF-8" />
+  <title>Clima Agora</title>
+  <link rel="stylesheet" href="{% static 'style/home.css' %}" />
+  <script>
+    window.onload = function () {document.querySelectorAll('.card, .bigwrapper').forEach(el => el.classList.add('fade-in'));};
+  </script>
+</head>
 
-            {% if 'nublado' in clima.descricao|lower %}
-              <img style="width:200px" src="{% static 'img/cloudy.png' %}" />
-            {% endif %}
+<body>
+  <div class="bigwrapper" id="bigwrapper">
+    <form method="get">
+      <input type="text" name="cidade" placeholder="Digite uma cidade" required />
+      <button type="submit"><img style="width:32.4px" src="{% static 'img/search.png' %}" /></button>
+    </form>
 
-            {% if 'céu limpo' in clima.descricao|lower %}
-              <img style="width:200px" src="{% static 'img/sun.png' %}" />
-            {% endif %}
+    {% if clima %}
+    {% if clima.erro %}
+    <p>{{ clima.erro }}</p>
+    {% else %}
+    <div class="card" id="card">
+      <h2 style="font-size:60px; color:white">{{ clima.cidade }}</h2>
 
-            <p style="font-size:60px; color:white">{{ clima.temperatura }}°C</p>
-
-            <div style="display:flex;justify-content: space-around;color: white;">
-              <P>9/11/25</P>
-              <P>18:28</P>
-            </div>
-          </div>
-        {% endif %}
+      {% if 'nublado' in clima.descricao|lower %}
+        <img style="width:100%" src="{% static 'img/cloudy.png' %}" />
       {% endif %}
+
+      {% if 'céu limpo' in clima.descricao|lower %}
+        <img style="width:80%" src="{% static 'img/sun.png' %}" />
+      {% endif %}
+      
+      <p style="color:white;font-size:20px;">{{ clima.descricao}}</p>
+      <p style="font-size:60px; color:white">{{ clima.temperatura }}°C</p>
+
+      <div style="display:flex;justify-content: space-around;color: white;">
+        <P>9/11/25</P>
+        <P>18:28</P>
+      </div>
     </div>
-  </body>
+    {% endif %}
+    {% endif %}
+  </div>
+</body>
 </html>
