@@ -47,6 +47,10 @@ A simple web application for checking the weather, working in Portuguese, built 
 -**Django**: (For syntax highlighting, snippets, etc.)
 -**SQLite Viewer**: (To inspect the database)
 
+5. Run database migrations (if needed):
+    ```bash
+    py -3.11 -m pip install requests
+
 6. Run database migrations (if needed):
     ```bash
     python manage.py migrate
