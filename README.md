@@ -41,16 +41,20 @@ A simple web application for checking the weather, working in Portuguese, built 
     ```bash
     python -m venv venv  
     source venv/bin/activate  # mac/linux  
-    venv\Scripts\activate     # windows  
+    venv\Scripts\activate     # windows
+4 VS Code Setup (Optional) For a better experience, install these extensions in your VSCode:
 
-4. Run database migrations (if needed):
+-**Django**: (For syntax highlighting, snippets, etc.)
+-**SQLite Viewer**: (To inspect the database)
+
+6. Run database migrations (if needed):
     ```bash
     python manage.py migrate
 
-5. Start the development server:
+7. Start the development server:
     ```bash
     python manage.py runserver
 
-6. Open in your browser:
+8. Open in your browser:
     ```bash
     👉 http://127.0.0.1:8000/ 
