@@ -36,29 +36,23 @@ A simple web application for checking the weather, working in Portuguese, built 
    ```bash
    cd Weather_Now
 
-
-3. Create and activate a virtual environment:
-    ```bash
-    python -m venv venv  
-    source venv/bin/activate  # mac/linux  
-    venv\Scripts\activate     # windows
-4 VS Code Setup (Optional) For a better experience, install these extensions in your VSCode:
+3. VS Code Setup (Optional) For a better experience, install these extensions in your VSCode:
 
 -**Django**: (For syntax highlighting, snippets, etc.)
 -**SQLite Viewer**: (To inspect the database)
 
-5. Run database migrations (if needed):
+4. Run database migrations (if needed):
     ```bash
     py -3.11 -m pip install requests
 
-6. Run database migrations (if needed):
+5. Run database migrations (if needed):
     ```bash
     python manage.py migrate
 
-7. Start the development server:
+6. Start the development server:
     ```bash
     python manage.py runserver
 
-8. Open in your browser:
+7. Open in your browser:
     ```bash
     👉 http://127.0.0.1:8000/ 
