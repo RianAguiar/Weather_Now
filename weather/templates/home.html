@@ -29,6 +29,8 @@
         <img style="width:90%" src="{% static 'img/fog.png' %}" />
       {% elif 'nuvens dispersas' in clima.descricao|lower %}
         <img style="width:100%" src="{% static 'img/cloudy.png' %}" />
+      {% elif 'algumas nuvens' in clima.descricao|lower %}
+        <img style="width:100%" src="{% static 'img/cloudy.png' %}" />
       {% elif 'céu limpo' in clima.descricao|lower %}
         <img style="width:80%" src="{% static 'img/sun.png' %}" />
       {% elif 'chuva leve' in clima.descricao %}
