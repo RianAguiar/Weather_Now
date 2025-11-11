@@ -23,10 +23,8 @@
       {% else %}
       <div class="card" id="card">
         <h2 style="font-size:50px; color:white">{{ clima.cidade }}</h2>
-
-
+-
         <img style="width:100%" src="{% static clima.icone %}" />
-
 
         <p style="color:white;font-size:20px;">{{ clima.descricao  }}</p>
         <p style="font-size:60px; color:white">{{ clima.temperatura|floatformat:0 }}°C</p>
