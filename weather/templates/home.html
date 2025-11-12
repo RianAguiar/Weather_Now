@@ -14,8 +14,9 @@
 <body>
   <div class="bigwrapper" id="bigwrapper">
     <form method="get">
+      <a href="{%url 'clima:index'%}"><img style="width:38px ;" src="{% static 'img/leave.png' %}"></a>
       <input type="text" name="cidade" placeholder="Digite uma cidade" required />
-      <button type="submit"><img style="width:32.4px" src="{% static 'img/search.png' %}" /></button>
+      <button type="submit"><img style="width:36.8px" src="{% static 'img/search.png' %}" /></button>
     </form>
 
     {% if clima %}
