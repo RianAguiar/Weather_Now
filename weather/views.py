@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.utils import timezone
-
 import requests
+
+'''---------------------------------------------------------------------------'''
 
 def home(request):
     clima = None
@@ -49,3 +50,8 @@ def home(request):
             clima = {'erro': 'Cidade não encontrada'}
     
     return render(request, 'home.html', {'clima': clima})
+
+'''---------------------------------------------------------------------------'''
+
+def index(request):
+    return render(request, 'index.html')

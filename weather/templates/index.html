@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Clima Agora</title>
+  <link rel="stylesheet" href="{% static 'style/index.css' %}" />
+  <link rel="icon" href="./static/img/sun.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="{% static 'scripts/fade.js' %}"></script>
+</head>
+
+<body>
+  <div class="bigwrapper" id="bigwrapper">
+    <div class="top">
+      <P style="font-size:50px; color:white; font-weight:800;">Weather Now</P>
+      <img style="width: 70%;" src="{% static 'img/moonraining.png' %}">
+      <P style="font-size:20px; color:white; font-weight:300;">Um aplicativo web simples para consultar o clima.</P>
+    </div>
+    <a href="{%url 'clima:home'%}">Começar</a>
+  </div>
+</body>
+</html>
