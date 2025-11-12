@@ -6,12 +6,12 @@
 
 a{
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(255, 187, 0);
     text-decoration: none;
     color: white;
     padding: 20px;
-    justify-content: center;
-    align-items: center;
     border-radius: 24px;
 }
 
