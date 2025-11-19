@@ -2,6 +2,9 @@
 
 A simple web application for checking the weather, working in Portuguese, built with **Django**, allowing users to search for a city and view current weather.
 
+<p align="center">
+  <img src="tarefas/static/img/image.png" width="350px" />
+</p>
 ---
 
 ## 🐸 Features  
