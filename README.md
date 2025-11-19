@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 # 🌦️ Weather_Now  
 
 A simple web application for checking the weather, working in Portuguese, built with **Django**, allowing users to search for a city and view current weather.
