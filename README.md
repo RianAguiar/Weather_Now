@@ -3,7 +3,7 @@
 A simple web application for checking the weather, working in Portuguese, built with **Django**, allowing users to search for a city and view current weather.
 
 <p align="center">
-  <img src="weather/static/img/image.png" width="350px" />
+  <img src="weather/static/img/screen.png" width="350px" />
 </p>
 ---
 
