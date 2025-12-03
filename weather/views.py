@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.utils import timezone
 import requests
 
-# --------------Serviço responsável por buscar os dados na API
+# --------------Classe responsável por buscar os dados na API
 
 class WeatherService:
     API_KEY = '76c7584ee4406560c782fda32315a50c'
