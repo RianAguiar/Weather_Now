@@ -7,14 +7,13 @@ from django.utils import timezone
 import requests
 
 # Controlador que monta o dicionário final de clima-----------
-class WeatherController:
+class Controlador:
     def __init__(self):
-        self.service = WeatherService()
-        self.icon_resolver = IconResolver()
+        self.service = API()
+        self.icon_resolver = Icones()
 
     def obter_clima_formatado(self, cidade):
         resposta = self.service.buscar_clima(cidade)
-        datahora = timezone.localtime(timezone.now())
 
         if resposta.get('cod') != 200:
             return {'erro': 'Cidade não encontrada'}
@@ -27,12 +26,10 @@ class WeatherController:
             'temperatura': resposta['main']['temp'],
             'icone': icone,
             'descricao': descricao.title(),
-            'data': datahora.strftime('%d/%m/%Y'),
-            'hora': datahora.strftime('%H:%M'),
         }
 
 # Classe responsável por buscar os dados na API---------------
-class WeatherService:
+class API:
     API_KEY = '76c7584ee4406560c782fda32315a50c'
     BASE_URL = 'https://api.openweathermap.org/data/2.5/weather'
     def buscar_clima(self, cidade):
@@ -41,7 +38,7 @@ class WeatherService:
         return resposta
     
 # Classe responsável por resolver qual ícone usar-------------
-class IconResolver:
+class Icones:
     ICONES = {
         'nublado': 'img/cloudy.png',
         'névoa': 'img/fog.png',
@@ -63,13 +60,18 @@ class IconResolver:
 # Views-------------------------------------------------------
 def home(request):
     clima = None
-
+    dh = None
     if 'cidade' in request.GET:
         cidade = request.GET['cidade']
-        controller = WeatherController()
-        clima = controller.obter_clima_formatado(cidade)
+        controlador = Controlador()
+        clima = controlador.obter_clima_formatado(cidade)
+        datahora = timezone.localtime(timezone.now())
+        dh = {
+            'data': datahora.strftime('%d/%m/%Y'),
+            'hora': datahora.strftime('%H:%M'),
+            }
 
-    return render(request, 'home.html', {'clima': clima})
+    return render(request, 'home.html', {'clima': clima, 'dh': dh})
 
 def index(request):
     return render(request, 'index.html')
