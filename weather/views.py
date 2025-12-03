@@ -6,22 +6,18 @@ from django.shortcuts import render
 from django.utils import timezone
 import requests
 
-# ------------------------------------------------------------
-# Serviço responsável por buscar os dados na API
-# ------------------------------------------------------------
+# --------------Serviço responsável por buscar os dados na API
+
 class WeatherService:
     API_KEY = '76c7584ee4406560c782fda32315a50c'
     BASE_URL = 'https://api.openweathermap.org/data/2.5/weather'
-
     def buscar_clima(self, cidade):
         url = f'{self.BASE_URL}?q={cidade}&appid={self.API_KEY}&lang=pt_br&units=metric'
         resposta = requests.get(url).json()
         return resposta
 
 
-# ------------------------------------------------------------
-# Classe responsável por resolver qual ícone usar
-# ------------------------------------------------------------
+# Classe responsável por resolver qual ícone usar-------------
 class IconResolver:
     ICONES = {
         'nublado': 'img/cloudy.png',
@@ -42,9 +38,8 @@ class IconResolver:
         return ""  # caso nenhum ícone combine
 
 
-# ------------------------------------------------------------
-# Controlador que monta o dicionário final de clima
-# ------------------------------------------------------------
+
+# Controlador que monta o dicionário final de clima---------
 class WeatherController:
     def __init__(self):
         self.service = WeatherService()
@@ -69,10 +64,7 @@ class WeatherController:
             'hora': datahora.strftime('%H:%M'),
         }
 
-
-# ------------------------------------------------------------
-# Views
-# ------------------------------------------------------------
+# VIEWS--------------------------------------------------------
 def home(request):
     clima = None
 
